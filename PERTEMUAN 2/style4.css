@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('lily.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 10px;
+  background: #fafafa;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.konten {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.konten h2 {
+  margin-top: 0;
+}
+
+.sidebar.dua {
+  background: #f9f9f9;
+}
