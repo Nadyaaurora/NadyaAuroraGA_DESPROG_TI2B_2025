@@ -1,15 +1,34 @@
 <?php
 $nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
+$totalNilai = 0;
 
-sort($nilaiSiswa);
+$nilaiTertinggi = [96, 92]; 
+$nilaiTerendah = [64, 70];  
 
-array_shift($nilaiSiswa);
-array_shift($nilaiSiswa);
+echo "Daftar nilai siswa: ";
+for ($i = 0; $i < count($nilaiSiswa); $i++) {
+    echo $nilaiSiswa[$i];
+    if ($i < count($nilaiSiswa) - 1) echo ", ";
+}
+echo "<br>";
 
-array_pop($nilaiSiswa);
-array_pop($nilaiSiswa);
+echo "Nilai yang dihitung (setelah mengabaikan 2 nilai tertinggi dan 2 terendah): ";
+for ($i = 0; $i < count($nilaiSiswa); $i++) {
+    if ($nilaiSiswa[$i] == $nilaiTertinggi[0] || $nilaiSiswa[$i] == $nilaiTertinggi[1] ||
+        $nilaiSiswa[$i] == $nilaiTerendah[0] || $nilaiSiswa[$i] == $nilaiTerendah[1]) {
+        continue;
+    }
 
-$totalNilai = array_sum($nilaiSiswa);
+    echo $nilaiSiswa[$i];
+    $totalNilai += $nilaiSiswa[$i];
 
-echo "Total nilai setelah mengabaikan dua nilai tertinggi dan dua nilai terendah: $totalNilai";
+    if ($i < count($nilaiSiswa) - 1) echo ", ";
+}
+echo "<br>";
+
+$rataRata = $totalNilai / 6; 
+echo "Total nilai: $totalNilai <br>";
+echo "Rata-rata nilai: $rataRata <br>";
 ?>
+
+
