@@ -10,9 +10,9 @@
         include ("koneksi.php");
         $id = $_GET['id'];
         $query = "SELECT * FROM anggota WHERE id = $id";
-        $result = mysqli_query($koneksi, $query);
-        $row = mysqli_fetch_assoc($result);
-        mysqli_close($koneksi);
+        $result = pg_query($koneksi, $query);
+        $row = pg_fetch_assoc($result);
+        pg_close($koneksi);
     ?>
 
     <div class="container mt-4">

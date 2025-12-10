@@ -15,7 +15,7 @@ if ($aksi == 'tambah') {
         header("Location: index.php");
         exit;
     } else {
-        echo "Gagal menambahkan data: " . pg_error($koneksi);
+        echo "Gagal menambahkan data: " . pg_last_error($koneksi);
     }
 }
 
@@ -29,7 +29,7 @@ elseif ($aksi == 'ubah') {
             header("Location: index.php");
             exit;
         } else {
-            echo "Gagal mengupdate data: " . pg_error($koneksi);
+            echo "Gagal mengupdate data: " . pg_last_error($koneksi);
         }
     } else {
         echo "ID tidak valid.";
@@ -46,7 +46,7 @@ elseif ($aksi == 'hapus') {
             header("Location: index.php");
             exit;
         } else {
-            echo "Gagal menghapus data: " . pg_error($koneksi);
+            echo "Gagal menghapus data: " . pg_last_error($koneksi);
         }
     } else {
         echo "ID tidak valid.";
